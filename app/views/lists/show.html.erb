@@ -1,0 +1,16 @@
+<h1><%= @list.name %></h1>
+<hr />
+<div class='ui buttons'>
+    <%= link_to 'Edit List', edit_list_path(@list), class: 'ui blue button' %>
+    <div class='or'></div>
+    <%= link_to 'Destroy', @list, method: :delete, class: 'ui red button' %>
+</div>
+<br />
+<br />
+<h2>Tasks</h2>
+<%= link_to 'Add Task', new_list_task_path(@list), class: 'ui button blue' %>
+    <ul>
+        <% @list.tasks.each do |task| %>
+            <li><%= link_to task.task, list_task_path(@list, task) %></li>
+        <% end %>
+    </ul>

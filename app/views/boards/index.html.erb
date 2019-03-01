@@ -1,0 +1,37 @@
+<html>
+    <header>
+        <div class='ui link list'>
+            <div class='active item'>Choose One</div>
+            <%= link_to 'Add Board', new_board_path, class: 'item' %>
+            <%= link_to 'All Lists', lists_path, class: 'item' %>
+        </div><span>
+        <h1 class='ui center aligned icon header'>
+        <i class='circular chess queen icon'></i>
+        Boards
+        </h1></span>
+    </header>
+    <body>
+    <hr />
+        <div class="ui three column centered grid">
+            <% @boards.each do |board| %>
+            <div class='ui column'>
+                <div class="ui card">
+                        <div class="image">
+                            <img src="data:image/jpeg;base64,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" />
+                        </div>
+                        <div class="content">
+                            <%= link_to "#{board.name}", board, class: "header" %>
+                        </div>
+                        <div class="extra content">
+                            <div class='fluid ui buttons'>
+                                <%= link_to 'Delete', board, method: :delete, data: { confirm: 'Are you sure?' }, class: 'ui red button' %>
+                                <div class='or'></div>
+                                <%= link_to 'Edit', edit_board_path(board), class: 'ui blue button' %>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <% end %>
+        </div>
+    </body>
+</html>
