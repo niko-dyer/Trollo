@@ -1,10 +1,18 @@
 <div class="ui inverted segment">
   <div class="ui inverted secondary pointing menu">
-        <%= link_to 'Boards', boards_path, class: 'item' %>
-        <%= link_to 'Add Board', new_board_path, class: 'item' %>
-    <div class="right menu">
+    <h2 style="margin-top: 5px;"> TaskIR </h2>
+      <%= link_to 'Boards', boards_path, class: 'item' %>
+      <%= link_to 'Add Board', new_board_path, class: 'item' %>
+  <div class="right menu">
+    <div class="ui search" style="opacity: .7;">
+      <div class="ui icon input">
+        <input class="prompt" type="text" placeholder="Search any task...">
+        <i class="search icon"></i>
+      </div>
+      <div class="results"></div>
+      </div>
     <h3> Logout </h3>
     <!-- link devise info to navbar-->
-</div>
+  </div>
   </div>
 </div>
