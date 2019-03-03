@@ -6,6 +6,7 @@ $images: ('https://i.pinimg.com/originals/c1/e7/30/c1e730a38f30b04816de325e5fced
 $img: nth($images, random(length($images)));
 body {
   background-color: rgb(40, 40, 40);
+  font-family: 'Work Sans', sans-serif !important;
 }
 
 .rando-calrissian{
