@@ -1,7 +1,67 @@
-<h1>Lists</h1>
-<hr />
-<ul>
-    <% @lists.each do |list| %>
-        <li><%= link_to list.name, list_path(list) %></li>
-    <% end %>
-</ul>
+<br><br><br><br>
+<div class="ui centered raised card" style="width: 500px;">
+<br><br>
+ <h2 class="ui center aligned icon header">
+  <i class="circular list icon"> </i>
+ </h2>
+ <br><br>
+  <div class="content">
+    <div class="header"><%= link_to "#{@board.name}", board_lists_path(@board) %></div>
+        <div class="description">
+            <p></p>
+        </div>
+    </div>
+  <div class="ui placeholder segment" style="
+    width: 500px;
+    /* align-content: center;
+   ">
+  <div class="ui two column stackable center aligned grid">
+    <div class="ui vertical divider">Or</div>
+    <div class="middle aligned row">
+      <div class="column">
+        <div class="ui icon header">
+          <i class="search icon"></i>
+          <!-- write a method that pulls in the name of your list-->
+        </div>
+        <div class="field">
+          <div class="ui search">
+            <div class="ui icon input">
+              <input class="prompt" type="text" placeholder="Search lists...">
+              <i class="search icon"></i>
+            </div>
+            <div class="results"></div>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="ui icon header">
+          <i class="circular list icon"></i>
+          Add New List
+        </div>
+          <%= link_to 'Create List', new_board_list_path(@board), class: "ui orange button inverted" %>
+      </div>
+    </div>
+  </div>
+  </div>
+    <div class="extra content" style="margin-right: 20px;">
+        <p class="ui content center aligned"> Scroll Down for Lists </p>
+        <p class="ui content center aligned"> ↓ </p>
+    </div>
+    <div class="ui segments" style="padding: 20px;">
+      <hr>
+        <% @board.lists.each do |list|%>
+          <br>
+            <li><%= link_to list.name, list_path(list.id) %>: 
+            <%= list.priority %></li>
+            <!-- call method to sort by priorety-->
+            <%= link_to 'Delete', board_list_path(@board, list.id), method: :delete %>
+          <br>
+          <hr>
+        <%end%>
+    </div>
+    <div class="extra content">
+        <%= link_to 'Edit',  edit_board_path(@board), class: "ui button orange"%>
+        <%= link_to 'Back',  boards_path, class: "ui button blue"%>
+    </div>
+</div>
+</div>

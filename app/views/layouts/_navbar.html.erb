@@ -1,3 +1,10 @@
-<nav class='ui menu'>
-    <%= link_to 'Boards', boards_path, class: 'item' %>
-</nav>
+<div class="ui inverted segment">
+  <div class="ui inverted secondary pointing menu">
+        <%= link_to 'Boards', boards_path, class: 'item' %>
+        <%= link_to 'Add Board', new_board_path, class: 'item' %>
+    <div class="right menu">
+    <h3> Logout </h3>
+    <!-- link devise info to navbar-->
+</div>
+  </div>
+</div>

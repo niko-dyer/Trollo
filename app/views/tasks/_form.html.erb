@@ -1,0 +1,15 @@
+<h1><%= @task.id ? 'Edit Task' : 'New Task' %></h1>
+<%= form_with(model: [@list, @task], local: true, class: 'ui form') do |f| %>
+    <div class='field'>
+        <%= f.label :name %>
+        <%= f.text_field :name, required: true, placeholder: 'Task Name' %>
+        <br>
+        <%= f.label :body %>
+        <%= f.text_area :body, placeholder: 'Create a detailed task' %>
+        <br>
+        <%= f.label :completed %>
+        <%= f.text_field :completed, placeholder: 'Type true or false to determine if the task is already completed' %>
+    </div>
+    <%= f.submit nil, class: 'ui small blue button inverted' %>
+    <%= link_to 'Back', :back, class: 'ui small secondary button inverted' %>
+<% end %>

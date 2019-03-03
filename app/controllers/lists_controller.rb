@@ -1,5 +1,5 @@
 class ListsController < ApplicationController
-  before_action :set_board, only: [:new, :create]
+  before_action :set_board, only: [:index, :new, :create, :destroy]
   before_action :set_list, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -17,7 +17,7 @@ class ListsController < ApplicationController
     @list = @board.lists.new(list_params)
 
     if @list.save
-      redirect_to board_path(@board)
+      redirect_to board_lists_path(@board)
     else
       render :new
     end
@@ -36,7 +36,7 @@ class ListsController < ApplicationController
 
   def destroy
     @list.destroy
-    redirect_to lists_path
+    redirect_to board_lists_path(@board)
   end
 
   private

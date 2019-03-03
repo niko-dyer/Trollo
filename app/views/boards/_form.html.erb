@@ -1,0 +1,11 @@
+<h1><%= @board.id ? 'Edit Board' : 'New Board' %></h1>
+<%= form_with(model: @board, local: true, class: 'ui form') do |f| %>
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name, required: true, placeholder: "Name" %>
+    <br>
+    <br>
+    <%= f.submit 'New Board', class: 'ui button small blue inverted' %>
+    <%= link_to 'Back', :back, class: 'ui small secondary button inverted' %>
+  </div>
+<% end %>

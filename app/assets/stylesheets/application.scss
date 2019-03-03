@@ -1,1 +1,22 @@
 @import 'semantic-ui';
+@import 'boards';
+
+$images: ('https://i.pinimg.com/originals/c1/e7/30/c1e730a38f30b04816de325e5fced5f8.jpg', 'http://i.imgur.com/2kabo.jpg', 'http://www.innatthecrossroads.com/wp-content/uploads/2016/10/Wooden-background-texture-pattern-images-for-website-HD-template-PSD-free-download.jpg');
+
+$img: nth($images, random(length($images)));
+body {
+  background-color: rgb(40, 40, 40);
+}
+
+.rando-calrissian{
+  background: url($img) top center repeat !important;
+  padding: -200px;
+  width: 100%;
+  height: 1000px;
+  margin-top: -15px;
+}
+
+.ui-center-aligned-icon-header {
+  font-size: 2em !important;
+  color: white !important;
+}

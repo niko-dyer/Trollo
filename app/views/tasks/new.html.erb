@@ -1,8 +1,5 @@
-<h1>Add Task</h1>
-<%= form_with(model: [@list, @task], local: true, class: 'ui form') do |f| %>
-    <div class='field'>
-        <%= f.label :task %>
-        <%= f.text_field :task, required: true, placeholder: 'Task Name' %>
-    </div>
-    <%= f.submit nil, class: 'ui blue button inverted' %>
-<% end %>
+<br><br><br><br><br><br>
+<div class="ui segment">
+
+<h1><%= render "form", list: @list %></h1>
+</div>
