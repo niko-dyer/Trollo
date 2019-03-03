@@ -46,15 +46,16 @@
   </div>
     <div class="extra content" style="margin-right: 20px;">
         <p class="ui content center aligned"> Scroll Down for Tasks </p>
-        <p class="ui content center aligned"> ↓ </p>
+        <p class="ui content center aligned" style="margin-bottom: -5px;"> ↓ </p>
     </div>
     <div class="ui segments" style="padding: 20px;">
       <hr>
       <% @list.tasks.each do |task|%>
           <br>
-            <li><%= link_to task.name, task_path(task.id) %>: 
+            <li><%= link_to task.name, task_path(task.id) %> 
             <!-- call method to sort by priorety-->
-            <%= link_to 'Delete', list_task_path(@list, task.id), method: :delete %>
+            <%= link_to 'Delete', list_task_path(@list, task.id), method: :delete, class: 'ui inverted button ' %>
+            <%= link_to 'Edit', edit_task_path(@list, task.id) %>
             <br>
             <hr>
             <%end%>

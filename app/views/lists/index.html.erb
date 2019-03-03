@@ -6,10 +6,7 @@
  </h2>
  <br><br>
   <div class="content">
-    <div class="header"><%= link_to "#{@board.name}", board_lists_path(@board) %></div>
-        <div class="description">
-            <p></p>
-        </div>
+    <div class="header" style="font-size: 2em"><%= "#{@board.name}" %></div>
     </div>
   <div class="ui placeholder segment" style="
     width: 500px;
@@ -43,25 +40,36 @@
     </div>
   </div>
   </div>
-    <div class="extra content" style="margin-right: 20px;">
+    <div class="extra content" style="margin-right: 20px; margin-bottom: -5px;">
         <p class="ui content center aligned"> Scroll Down for Lists </p>
-        <p class="ui content center aligned"> ↓ </p>
+        <p class="ui content center aligned" style="margin-bottom: -5px;"> ↓ </p>
     </div>
-    <div class="ui segments" style="padding: 20px;">
-      <hr>
+    <div class="ui segments" style="padding: 5px;">
         <% @board.lists.each do |list|%>
-          <br>
-            <li><%= link_to list.name, list_path(list.id) %>: 
-            <%= list.priority %></li>
+        <br>
+        <div class="ui segments" style="padding: 30px; margin-top: -10px; margin-bottom: -10px;">
+          <div class="ui-segment">
+            <h2>
+              <%= link_to list.name, list_path(list.id) %> 
+            </h2>
             <!-- call method to sort by priorety-->
-            <%= link_to 'Delete', board_list_path(@board, list.id), method: :delete %>
-          <br>
-          <hr>
-        <%end%>
+            <div class="ui mini buttons" style="margin-left: -10px;">
+              <button class="ui inverted button red">
+                <%= link_to 'Delete', board_list_path(@board, list.id), method: :delete %>
+              </button>
+              <div class="or"></div>
+              <button class="ui inverted button blue">
+                <%= link_to 'Edit', edit_board_list_path(@board, list.id) %>
+              </button>
+            </div>
+            <br>
+          </div>
+      </div>
+      <br>
+      <%end%>
     </div>
     <div class="extra content">
-        <%= link_to 'Edit',  edit_board_path(@board), class: "ui button orange"%>
-        <%= link_to 'Back',  boards_path, class: "ui button blue"%>
+        <%= link_to 'Back',  boards_path, class: "ui secondary button inverted"%>
     </div>
 </div>
 </div>

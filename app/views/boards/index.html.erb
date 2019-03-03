@@ -8,16 +8,15 @@
 <div class="ui grid">
   <% @boards.each do |board| %>
   <div class="four wide column">
-  <div class="ui horizontal segments">
-    <div class="ui segment">
-      <i class="list ul icon"></i>
+    <div class="ui horizontal segments">
       <div class="ui segment">
-      <h2 ><%= link_to "#{board.name}", board %></h2>
+        <i class="list ul icon"></i>
+        <div class="ui segment" style="padding: 25px;">
+        <h2 ><%= link_to "#{board.name}", board %></h2>
+        </div>
       </div>
     </div>
   </div>
-</div>
-    <% end %>
-  </div>
+  <% end %>
 </div>
 

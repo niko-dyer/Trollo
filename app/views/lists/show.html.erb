@@ -9,9 +9,6 @@
   <h1 class="ui centered aligned header">
   <%= "#{@list.name}"%>
   </h1>
-        <div class="description">
-            <p></p>
-        </div>
     </div>
   <div class="ui placeholder segment" style="
     width: 500px;
@@ -44,26 +41,35 @@
     </div>
   </div>
   </div>
-    <div class="extra content" style="margin-right: 20px;">
+    <div class="extra content" style="margin-right: 20px; margin-bottom: -5px;">
         <p class="ui content center aligned"> Scroll Down for Tasks </p>
-        <p class="ui content center aligned"> ↓ </p>
+        <p class="ui content center aligned" style="margin-bottom: -5px;"> ↓ </p>
     </div>
-    <div class="ui segments" style="padding: 20px;">
-      <hr>
+    <div class="ui segments" style="padding: 5px;">
       <% @list.tasks.each do |task|%>
         <br>
-          <p> <%= link_to task.name, list_task_path(@list, task.id) %> </p> 
-          <p><%= task.body %> </p> 
-          <p><%= task.completed %> </p> 
-          <!-- call method to sort by priorety-->
-          <%= link_to 'Delete', list_task_path(@list, task.id), method: :delete %>
+        <div class="ui segments" style="padding: 30px; margin-top: -10px; margin-bottom: -10px;">
+          <div class="ui-segment">
+            <p> <%= link_to task.name, list_task_path(@list, task.id) %> </p> 
+            <p><%= task.body %> </p> 
+            <!-- call method to sort by priorety-->
+            <div class="ui mini buttons">
+              <button class="ui inverted button red">
+                <%= link_to 'Delete', list_task_path(@list, task.id), method: :delete %>
+              </button>
+              <div class="or"></div>
+              <button class="ui inverted button blue">
+                <%= link_to 'Edit', edit_list_task_path(@list, task.id) %>
+              </button>
+            </div>
+          </div>
+        </div>
           <br>
-          <hr>
         <%end%>
     </div>
     <div class="extra content">
         <!-- link to edit tasks -->
-        <%= link_to 'Back',  :back, class: "ui button blue"%>
+        <%= link_to 'Back',  :back, class: "ui inverted secondary button"%>
     </div>
 </div>
 </div>

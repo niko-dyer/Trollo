@@ -3,12 +3,22 @@
 # add devise
     #add login
 
-# body changes
+# body
     1. # change font styling
 
-#ui navbar changes
+#navbar
     1. # add taskir to left side of navbar
 
+#boardsindex
+    # link to delete boards
     ________________________________________________________________________________________________
 
-    #
+    # clean up views for listed lists and tasks
+
+    # show andrew Oliver Tree
+
+    # write an onscroll down function to hide scroll down segment
+
+    # make search within the app and specific lists and option
+
+    # create prioritization of the lists
