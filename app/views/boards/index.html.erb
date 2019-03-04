@@ -1,6 +1,6 @@
 <br>
 <h2 class="ui center aligned icon header" style="color: white; font-size: 3em; margin-left: -50px; margin-top: 70px; 
-font-family: 'Major Mono Display', monospace;">
+font-family: 'Bungee Hairline', cursive;">
   <img class="ui medium circular image" src="Untitled_Artwork.jpg" style="width: 200px; height: 200px; z-index: 1; opacity: 100%;">
   Boards
 </h2>
@@ -9,13 +9,11 @@ font-family: 'Major Mono Display', monospace;">
 <div class="ui grid">
   <% @boards.each do |board| %>
   <div class="four wide column">
-    <div class="ui horizontal segments">
-      <div class="ui segment">
+    <div class="ui horizontal segments" style="padding: 10px;">
         <i class="list ul icon"></i>
-        <div class="ui segment" style="padding: 25px;">
+        <div class="ui segment" style="padding: 27px;">
         <h2 ><%= link_to "#{board.name}", board %></h2>
         </div>
-      </div>
     </div>
   </div>
   <% end %>
